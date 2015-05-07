@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{36C13382-B82D-4BEF-A5CF-73634457D081}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SimpleService</RootNamespace>
+    <AssemblyName>SimpleService</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <newfilesearch>OnLoadAutoInsert</newfilesearch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Externalconsole>True</Externalconsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Externalconsole>True</Externalconsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="MySql.Data.Entity">
+      <HintPath>v2.0\MySql.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>v2.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Fabric.Plugin">
+      <HintPath>v2.0\MySql.Fabric.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="MySimpleService.cs" />
+    <Compile Include="Transporter.cs" />
+    <Compile Include="SimpleJSON.cs" />
+    <Compile Include="protocol.cs" />
+    <Compile Include="AsyncEventArgs.cs" />
+    <Compile Include="Session.cs" />
+    <Compile Include="AsyncServer.cs" />
+    <Compile Include="Encrypt.cs" />
+    <Compile Include="MySQL\MySQL_Test.cs" />
+    <Compile Include="MySQL\MySQLHelper.cs" />
+    <Compile Include="ClientThread.cs" />
+    <Compile Include="BLL\ServiceBLL.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="SimpleService.userprefs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MySQL\" />
+    <Folder Include="BLL\" />
+  </ItemGroup>
+</Project>
