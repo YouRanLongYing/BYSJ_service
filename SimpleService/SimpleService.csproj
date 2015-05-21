@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -47,9 +47,16 @@
     <Reference Include="System.Data.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\GameRoom.cs" />
+    <Compile Include="BLL\MainServiceBLL.cs" />
+    <Compile Include="BLL\MsgType.cs" />
+    <Compile Include="Entity\Player.cs" />
+    <Compile Include="Entity\Room.cs" />
+    <Compile Include="Entity\RoomPool.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="MySimpleService.cs" />
+    <Compile Include="MySQL\SqlSecurity.cs" />
     <Compile Include="Transporter.cs" />
     <Compile Include="SimpleJSON.cs" />
     <Compile Include="protocol.cs" />
@@ -64,10 +71,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="SimpleService.userprefs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MySQL\" />
-    <Folder Include="BLL\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

@@ -56,7 +56,9 @@ namespace SimpleService
 	public interface IEncrypter
 	{
 		byte[] Encode(byte[] data);
-		byte[] Decode(byte[] data);
+        byte[] Encode(string data);
+        byte[] Decode(byte[] data);
+		string Decode(byte[] data,bool flag=false);
 	}
 	/// <summary>
 	/// Base64的加密实现
@@ -75,8 +77,20 @@ namespace SimpleService
 			return Convert.FromBase64String(Encoding.UTF8.GetString(data).TrimEnd('\0'));
 		}
 
-		#endregion
-	}
+
+
+
+        public byte[] Encode(string data)
+        {
+            return Encode(Encoding.UTF8.GetBytes(data));
+        }
+
+        public string Decode(byte[] data, bool flag = false)
+        {
+            return Encoding.UTF8.GetString(Decode(data));
+        }
+        #endregion
+    }
 
 
 

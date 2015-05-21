@@ -14,6 +14,8 @@ namespace SimpleService
 	{
 		public ServiceBLL ()
 		{
+
+
 		}
 	}
 }

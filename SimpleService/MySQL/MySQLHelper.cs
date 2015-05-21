@@ -17,7 +17,7 @@ namespace SimpleService
 	{
 		#region Fields
 		private string connectionString="Server=localhost;" +
-			"Database=RapidRacing;" +
+			"Database=mycargame;" +
 				"User ID=root;" +
 				"Password=;" +
 				"Pooling=false";

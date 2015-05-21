@@ -85,7 +85,7 @@ namespace SimpleService
 		#endregion
 		
 		/// <summary>
-		/// 构造函数
+		/// 构造函数 
 		/// </summary>
 		/// <param name="cliSock">会话使用的Socket连接</param>
 		public Session(Socket cliSock)

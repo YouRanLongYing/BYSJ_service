@@ -1,0 +1,16 @@
+D:\BYSJ\BYSJ_service\SimpleService\bin\Debug\SimpleService.exe
+D:\BYSJ\BYSJ_service\SimpleService\bin\Debug\SimpleService.pdb
+D:\BYSJ\BYSJ_service\SimpleService\bin\Debug\MySql.Data.dll
+D:\BYSJ\BYSJ_service\SimpleService\bin\Debug\MySql.Data.Entity.dll
+D:\BYSJ\BYSJ_service\SimpleService\bin\Debug\MySql.Fabric.Plugin.dll
+D:\BYSJ\BYSJ_service\SimpleService\obj\x86\Debug\SimpleService.csprojResolveAssemblyReference.cache
+D:\BYSJ\BYSJ_service\SimpleService\obj\x86\Debug\SimpleService.exe
+D:\BYSJ\BYSJ_service\SimpleService\obj\x86\Debug\SimpleService.pdb
+E:\BYSJ\BYSJ_service\SimpleService\bin\Debug\SimpleService.exe
+E:\BYSJ\BYSJ_service\SimpleService\bin\Debug\SimpleService.pdb
+E:\BYSJ\BYSJ_service\SimpleService\bin\Debug\MySql.Data.dll
+E:\BYSJ\BYSJ_service\SimpleService\bin\Debug\MySql.Data.Entity.dll
+E:\BYSJ\BYSJ_service\SimpleService\bin\Debug\MySql.Fabric.Plugin.dll
+E:\BYSJ\BYSJ_service\SimpleService\obj\x86\Debug\SimpleService.csprojResolveAssemblyReference.cache
+E:\BYSJ\BYSJ_service\SimpleService\obj\x86\Debug\SimpleService.exe
+E:\BYSJ\BYSJ_service\SimpleService\obj\x86\Debug\SimpleService.pdb
