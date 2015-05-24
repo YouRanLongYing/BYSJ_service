@@ -7,7 +7,7 @@ namespace SimpleService.Entity
 {
     public class RoomPool
     {
-        private Dictionary<int, Room> poolInstance = null;
+        public Dictionary<int, Room> Rooms = null;
 
         public const int POOL_MAX = 10;
         static private RoomPool instance = null;
@@ -24,11 +24,12 @@ namespace SimpleService.Entity
                         if (instance == null)
                         {
                             instance = new RoomPool();
-                            instance.poolInstance = new Dictionary<int, Room>(POOL_MAX);
+                            instance.Rooms = new Dictionary<int, Room>(POOL_MAX);
                             for (int i = 0; i < POOL_MAX;i++ )
                             {
                                 Room room = new Room(i);
-                                instance.poolInstance.Add(i, room);
+                                room.roomName = "第"+i+"个房间";
+                                instance.Rooms.Add(i, room);
                             }
                         }
                     }
@@ -42,9 +43,9 @@ namespace SimpleService.Entity
         {
             for (int i = 0; i < POOL_MAX;i++ )
             {
-                if (poolInstance[i].isActive == false)
+                if (Rooms[i].isActive == false)
                 {
-                    Room room = poolInstance[i];
+                    Room room = Rooms[i];
                     room.owner = owner;
                     room.players=players;
                     foreach (Player p in players)
@@ -61,7 +62,7 @@ namespace SimpleService.Entity
 
         public void resetRoom(int roomId)
         {
-            resetRoom(poolInstance[roomId]);
+            resetRoom(Rooms[roomId]);
         }
 
         public void resetRoom(Room room)

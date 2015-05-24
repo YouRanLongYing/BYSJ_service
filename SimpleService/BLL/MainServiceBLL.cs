@@ -143,12 +143,20 @@ namespace SimpleService.BLL
                     case MsgType.WorldMsg:
                         SendString2All(N["WorldMsg"].ToString());
                         break;
+                    case MsgType.RoomList:
+                        SendRoomsToClient(N, args);
+                        break;
+                    case MsgType.CreateRoom:
+                        CreateRoom_Method(N, args);
+                        break;
                     default: break;
                 }
 
                 
             }
         }
+
+        #region ClientMethod
 
         private void Login_Method(JSONNode N, AsyncEventArgs args)
         {
@@ -221,11 +229,67 @@ namespace SimpleService.BLL
 
         }
 
+        public void SendRoomsToClient(JSONNode N, AsyncEventArgs args)
+        {
+            Console.WriteLine(N.ToString());
+            Guid client=Guid.Parse(JSON.GetStr(N["clientId"].ToString()));
+            Player player = Players[client];
+            JSONNode M = GetStandJson();
+            M["MsgType"] = ((int)MsgType.RoomList_Response).ToString();
+            int count = 0;
+            foreach(KeyValuePair<int,Room> pair in RoomPool.Instance.Rooms)
+            {
+                if (pair.Value.isActive)
+                {
+                    M["Rooms"][count]["roomId"] = pair.Value.roomId.ToString();
+                    M["Rooms"][count]["roomName"] = pair.Value.roomName;
+                    M["Rooms"][count]["owner"] = pair.Value.owner.nickName;
+                    count++;
 
+                }
+            }
+            M["RoomCount"].AsInt = count;
+            //////////////////////////////////////////////////TEST//////////////////
+            
+            M["Rooms"][count]["roomId"] = RoomPool.POOL_MAX.ToString();
+            M["Rooms"][count]["roomName"] = "测试用";
+            M["Rooms"][count]["owner"] = "admin";
+            count++;
+            M["RoomCount"].AsInt = count;
+            //////////////////////////////////////////////////////////////////////////
+            Console.WriteLine(M.ToString());
+            SendDataToClient(player, M);
+        }
 
-        
+        public void CreateRoom_Method(JSONNode N, AsyncEventArgs args)
+        {
+            Console.WriteLine(N.ToString());
+            Guid client = Guid.Parse(JSON.GetStr(N["clientId"].ToString()));
+            Player player = Players[client];
+            JSONNode M = GetStandJson();
+            M["MsgType"] = ((int)MsgType.CreateRoom_Response).ToString();
+            List<Player> playerList = new List<Player>();
+            playerList.Add(player);
+            Room room = RoomPool.Instance.GetRoom(player, playerList);
+            room.roomName = JSON.GetStr(N["roomName"].ToString());
+            room.password = JSON.GetStr(N["password"].ToString());
+            M["roomId"].AsInt = room.roomId;
+            M["roomName"] = room.roomName;
+            M["password"] = room.password;
+            M["owner"] = room.owner.clientId.ToString();
+            M["ownerName"] = room.owner.nickName;
+            M["clientId"] = player.clientId.ToString();
+            Console.WriteLine(M.ToString());
+            SendDataToClient(player, M);
+            //foreach (Player p in room.players)
+            //{
+            //    SendDataToClient(p, M);
+            //}
+        }
 
-	}
+        #endregion
+
+    }
 
     
 }

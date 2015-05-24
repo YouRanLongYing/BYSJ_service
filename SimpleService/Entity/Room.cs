@@ -10,6 +10,8 @@ namespace SimpleService.Entity
     public class Room
     {
         public int roomId;
+        public string roomName="";
+        public string password = "";
         public Player owner;
         public List<Player> players;
         public bool isActive = false;
