@@ -26,5 +26,6 @@ namespace SimpleService.BLL
         CreateRoom_Response = 15,//响应创建房间
         GetPlayers = 16,//批量获取玩家信息
         GetPlayers_Response = 17,//批量获取玩家信息的响应
+        Regist_Response = 18,
     }
 }

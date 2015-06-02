@@ -1,47 +1,152 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="SimpleService.MySQL_Test" Collapsed="true">
-    <Position X="4.5" Y="1.75" Width="1.5" />
+  <Class Name="SimpleService.AsyncServer">
+    <Position X="6.25" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAIA=</HashCode>
-      <FileName>MySQL\MySQL_Test.cs</FileName>
+      <HashCode>AAIAEAAAACAgAQABCGIKQAQAiAAJAJAKJEEAoAAAAAA=</HashCode>
+      <FileName>AsyncServer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SimpleService.AsyncEventArgs" Collapsed="true">
+    <Position X="1.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAoAAAAAAAAAAA=</HashCode>
+      <FileName>AsyncEventArgs.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SimpleService.MySQLHelper" Collapsed="true">
-    <Position X="3.25" Y="3" Width="1.5" />
+  <Class Name="SimpleService.Session">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABgAABAAACAAAAAAAAACAAAAEAACAAAAAAFCAAAA=</HashCode>
+      <FileName>Session.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleService.BLL.MainServiceBLL">
+    <Position X="1" Y="3.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>ACAgAAEAQCAAABQAAgAAAgoACAAkACIgIAAAAAAAAAA=</HashCode>
+      <FileName>BLL\MainServiceBLL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleService.Encrypt">
+    <Position X="9" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAQIAAAAA=</HashCode>
+      <FileName>Encrypt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleService.Encrypter_Base64" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Encrypt.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SimpleJSON.JSONNode" Collapsed="true">
+    <Position X="4.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgIAAgDIAhAAgEiAAEXAQAACBIGIADABChAAAgEig=</HashCode>
+      <FileName>SimpleJSON.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleJSON.JSONArray">
+    <Position X="6" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAABAECAAEDAQABCAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SimpleJSON.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SimpleJSON.JSONClass">
+    <Position X="1.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAABAECAAEDAQAACAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>SimpleJSON.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SimpleJSON.JSONData">
+    <Position X="3.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAIAACAAAACAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>SimpleJSON.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleJSON.JSONLazyCreator">
+    <Position X="8.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAEAAACAAABAAEiAAACAAAAAAIAIAjABAAAAAAAig=</HashCode>
+      <FileName>SimpleJSON.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleJSON.JSON">
+    <Position X="1.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SimpleJSON.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleService.Entity.Player">
+    <Position X="11.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAACAAAABAAAQAIAAAgoBAQAAEAAAA=</HashCode>
+      <FileName>Entity\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleService.Entity.Room">
+    <Position X="12.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAggAAACAAABAAgAAAAAAAIAAAAgAAAAA=</HashCode>
+      <FileName>Entity\Room.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleService.Entity.RoomPool">
+    <Position X="14.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgABAAAAIAAAAAAAAAACABBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Entity\RoomPool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleService.MySQLHelper">
+    <Position X="14.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIACAAACAAACgAAAAAACAAAAAAAAAAACAAAACAAAA=</HashCode>
       <FileName>MySQL\MySQLHelper.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="SimpleService.MySimpleService" Collapsed="true">
-    <Position X="1.75" Y="3.5" Width="1.5" />
+  <Class Name="SimpleService.MySQL.SqlSecurity">
+    <Position X="16" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAACAAEAAAAAAAAAAAAAAAggAAAgAAAAAAAA=</HashCode>
-      <FileName>MySimpleService.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MySQL\SqlSecurity.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SimpleService.ServiceBLL" Collapsed="true">
-    <Position X="1" Y="4.25" Width="1.5" />
+  <Interface Name="SimpleService.IEncrypter">
+    <Position X="9" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>BLL\ServiceBLL.cs</FileName>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Encrypt.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="SimpleService.Session" Collapsed="true">
+  </Interface>
+  <Enum Name="SimpleJSON.JSONBinaryTag">
+    <Position X="3.75" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAACAAEAAIAAAAAAAAAAEAAAAAgAAAQAAA=</HashCode>
+      <FileName>SimpleJSON.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SimpleService.BLL.MsgType" Collapsed="true">
     <Position X="3.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAABgAABAAACAAAAAAAAACAAAAEAACAAAAAAFCAAAA=</HashCode>
-      <FileName>Session.cs</FileName>
+      <HashCode>BAAAAWhAAAAAAAAgQRAAIAQCAAAAAAAAQAAQIQEAEAA=</HashCode>
+      <FileName>BLL\MsgType.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="SimpleService.StateObject" Collapsed="true">
-    <Position X="6" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
-      <FileName>Transporter.cs</FileName>
-    </TypeIdentifier>
-  </Class>
+  </Enum>
   <Font Name="Microsoft YaHei UI" Size="9" />
 </ClassDiagram>

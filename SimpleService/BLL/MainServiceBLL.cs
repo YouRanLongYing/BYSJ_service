@@ -139,6 +139,7 @@ namespace SimpleService.BLL
                     case MsgType.Sql:
                         break;
                     case MsgType.Regist:
+                        Regist_Method(N, args);
                         break;
                     case MsgType.WorldMsg:
                         SendString2All(N["WorldMsg"].ToString());
@@ -251,11 +252,11 @@ namespace SimpleService.BLL
             M["RoomCount"].AsInt = count;
             //////////////////////////////////////////////////TEST//////////////////
             
-            M["Rooms"][count]["roomId"] = RoomPool.POOL_MAX.ToString();
-            M["Rooms"][count]["roomName"] = "测试用";
-            M["Rooms"][count]["owner"] = "admin";
-            count++;
-            M["RoomCount"].AsInt = count;
+            //M["Rooms"][count]["roomId"] = RoomPool.POOL_MAX.ToString();
+            //M["Rooms"][count]["roomName"] = "测试用";
+            //M["Rooms"][count]["owner"] = "admin";
+            //count++;
+            //M["RoomCount"].AsInt = count;
             //////////////////////////////////////////////////////////////////////////
             Console.WriteLine(M.ToString());
             SendDataToClient(player, M);
@@ -285,6 +286,50 @@ namespace SimpleService.BLL
             //{
             //    SendDataToClient(p, M);
             //}
+        }
+
+        public void Regist_Method(JSONNode N, AsyncEventArgs args)
+        {
+            Console.WriteLine(N.ToString());
+            JSONNode response = MainServiceBLL.GetStandJson();
+            using (MySQLHelper msh = new MySQLHelper())
+            {
+
+                string username = JSON.GetStr(N["Regist"]["userName"].ToString());
+                string password = JSON.GetStr(N["Regist"]["password"].ToString());
+                string nickName = JSON.GetStr(N["Regist"]["nickName"].ToString());
+                //sql语句预处理，排除特殊字符，预防sql注入攻击
+                username = SqlSecurity.CheckSqlParams(username, new char[] { '\'', '=', ' ' });
+                password = SqlSecurity.CheckSqlParams(password, new char[] { '\'', '=', ' ' });
+                nickName = SqlSecurity.CheckSqlParams(nickName, new char[] { '\'', '=', ' ' });
+
+                string loginSql = "use mycargame;INSERT INTO `mycargame`.`user` (`username`, `password`, `nickname`) VALUES ('"+username+"', '"+password+"', '"+nickName+"');";
+                Console.WriteLine(loginSql);
+                msh.ConnectDB();
+                try
+                {
+                    IDataReader dr = msh.ExecuteReader(loginSql);
+                    response["MsgType"] = ((int)MsgType.Regist_Response).ToString();
+                    response["Regist_Response"]["Result"] = "True";
+                }
+                catch (System.Exception ex)
+                {
+                	response["MsgType"] = ((int)MsgType.Regist_Response).ToString();
+                    response["Regist_Response"]["Result"] = "False";
+                }
+                finally
+                {
+                    Player player= new Player();
+                    player._Session=args._sessions;
+                    Console.WriteLine(response.ToString());
+                    SendDataToClient(player, response);
+                }
+                
+
+                
+                
+            } 
+
         }
 
         #endregion
